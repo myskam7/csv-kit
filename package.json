@@ -1,0 +1,26 @@
+{
+  "name": "csv_kit",
+  "version": "1.0.1",
+  "description": "Middleware for uploading and simultaneously parsing a CSV file from http requests.",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DC-Developer/csv_kit.git"
+  },
+  "keywords": [
+    "CSV",
+    "csv",
+    "multer",
+    "file",
+    "upload"
+  ],
+  "author": "NPM themachineherald dcdeveloper26@gmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DC-Developer/csv_kit/issues"
+  },
+  "homepage": "https://github.com/DC-Developer/csv_kit#readme"
+}
