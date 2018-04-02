@@ -15,6 +15,10 @@
         },
         upload: function() {
             return upload.single(this.filename);
+        },
+        read: function(path) {
+            //set the default of headers to true
+            return csv.fromPath(path, { headers: true });
         }
     };
 
