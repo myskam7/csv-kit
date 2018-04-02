@@ -10,7 +10,7 @@
     kit.prototype = {
 
         log: function(){
-            console.log('file to be parsed: ', self.filename);
+            console.log('file to be parsed: ', this.filename);
         }
     };
 
@@ -22,5 +22,5 @@
     kit.init.prototype = kit.prototype;
 
     module.exports = kit;
-    
+
 }).call(this);
