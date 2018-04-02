@@ -10,11 +10,11 @@
 
     kit.prototype = {
 
-        log: function(filename) {
-            console.log('file to be parsed: ', filename);
+        log: function() {
+            console.log('file to be parsed: ', this.filename);
         },
-        upload: function(filename) {
-            return upload.single(filename);
+        upload: function() {
+            return upload.single(this.filename);
         },
         read: function(path) {
             //set the default of headers to true
@@ -51,9 +51,9 @@
         // }
     };
 
-    kit.init = function() {
+    kit.init = function(filename) {
         var self = this;
-        
+        self.filename = filename;
     }
 
     kit.init.prototype = kit.prototype;
