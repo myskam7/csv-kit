@@ -11,7 +11,7 @@
     kit.prototype = {
 
         log: function(filename) {
-            console.log('file to be parsed: ', this.filename);
+            console.log('file to be parsed: ', filename);
         },
         upload: function(filename) {
             return upload.single(filename);
