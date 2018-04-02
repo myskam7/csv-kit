@@ -28,14 +28,14 @@
 
             var obj = {};
             var arr = [];
-            
+
             for(var i=0; i<dbArr.length; i++){     
 
                 obj = {};
 
                 for(var j=0; j<headers.length; j++){
-                    console.log(records[i][headers[j]]);
-                    obj[headers[j]] = records[i][headers[j]];
+                    console.log(dbArr[i][headers[j]]);
+                    obj[headers[j]] = dbArr[i][headers[j]];
                 }
 
                 arr.push(obj);                    
