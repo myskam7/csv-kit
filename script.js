@@ -14,7 +14,7 @@
             console.log('file to be parsed: ', this.filename);
         },
         upload: function() {
-            return upload;
+            return upload.single(this.filename);
         }
     };
 
