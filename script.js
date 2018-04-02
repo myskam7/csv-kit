@@ -2,6 +2,7 @@
     
     var csv = require('fast-csv');
     var multer = require('multer');
+    var upload = multer({ dest: "uploads/" });
 
     function kit(filename) {
         return new kit.init(filename);
@@ -9,8 +10,11 @@
 
     kit.prototype = {
 
-        log: function(filename){
+        log: function(filename) {
             console.log('file to be parsed: ', this.filename);
+        },
+        upload: function() {
+            return upload;
         }
     };
 
