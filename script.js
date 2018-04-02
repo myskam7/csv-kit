@@ -43,12 +43,16 @@
 
 
             return csv.writeToPath(path, arr, { headers: true });
-        }
+        },
         
         //create multiple database insert functions for different databases, for now make two-- one for mysql, the other for mongodb
-        // insert: function() {
+        insertMgd: function() {
            
-        // }
+            return null;//for now
+        },
+        insertMgoo: function() {
+            return null;//for now
+        }
     };
 
     kit.init = function(filename) {
