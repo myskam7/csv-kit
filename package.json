@@ -1,6 +1,6 @@
 {
   "name": "csv-kit",
-  "version": "1.0.14",
+  "version": "1.0.15",
   "description": "Middleware for uploading and simultaneously parsing a CSV file from http requests.",
   "main": "script.js",
   "scripts": {
