@@ -27,7 +27,8 @@
             //right now the default data format we're going to use is an array of objects.
 
             var obj = {};
-
+            var arr = [];
+            
             for(var i=0; i<dbArr.length; i++){     
 
                 obj = {};
