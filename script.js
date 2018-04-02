@@ -34,17 +34,14 @@
                 obj = {};
 
                 for(var j=0; j<headers.length; j++){
-                    console.log(dbArr[i][headers[j]]);
                     obj[headers[j]] = dbArr[i][headers[j]];
                 }
 
                 arr.push(obj);                    
             }
 
-
             return csv.writeToPath(path, arr, { headers: true });
         },
-        
         //create multiple database insert functions for different databases, for now make two-- one for mysql, the other for mongodb
         insertMgd: function() {
            
