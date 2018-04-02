@@ -9,7 +9,7 @@
 
     kit.prototype = {
 
-        log: function(){
+        log: function(filename){
             console.log('file to be parsed: ', this.filename);
         }
     };
