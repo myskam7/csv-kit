@@ -14,8 +14,10 @@
 
         self.filename = filename;
 
-        console.log('file to be parsed: ', self.filename);
-        
+        self.log = function(){
+            console.log('file to be parsed: ', self.filename);
+        };
+
     }
 
     kit.init.prototype = kit.prototype;
