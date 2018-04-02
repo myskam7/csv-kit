@@ -7,20 +7,20 @@
         return new kit.init(filename);
     }
 
-    kit.prototype = {};
+    kit.prototype = {
+
+        log: function(){
+            console.log('file to be parsed: ', self.filename);
+        }
+    };
 
     kit.init = function(filename) {
         var self = this;
-
         self.filename = filename;
-
-        self.log = function(){
-            console.log('file to be parsed: ', self.filename);
-        };
-
     }
 
     kit.init.prototype = kit.prototype;
 
     module.exports = kit;
+    
 }).call(this);
