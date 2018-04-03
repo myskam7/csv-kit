@@ -14,25 +14,25 @@ npm install csv-kit
 
         Basic Functions(to be exanded on in further patches)
 
-    Uploading A Single File
+Uploading A Single File
 
         take the name of the input element with type file and pass it as an argument:
 
         $k.upload(/*input name*/)
+        
         //.upload() calls the multer npm package, which attaches a body object and a file/files object to the request                //object, //so //to access the data use "req.file" for now, since only single uploads are currently available.
 
-
-        Then use as a middleware function in your routes:
+Then use as a middleware function in your routes:
 
         app.post('/api/csv', $k.upload('csv'), function(req, res) {
           var file = req.file.path;
            //Do whatever with file
         });
 
-            Reading a Csv file from specified path
-        //use the above method, the path retreived from $k.upload() will be sent in as an argument to the read method.
-
-        $k.read(file)//reads the file based off the sent file path-- can attach event handlers:
+Reading a Csv file from specified path
+        
+The path retreived from $k.upload() will be sent in as an argument to the read method.
+$k.read(file) reads the file based off the sent file path-- can attach event handlers:
 
         $k.read(file)
           .on('data', function(data){
@@ -45,7 +45,7 @@ npm install csv-kit
          });
 
 
-            Writing Csv data to specified path from a MongoDB database
+Writing Csv data to specified path from a MongoDB database
 
         This method only needs path, headers(as an array of strings/values), and the data from a database retrieval                   query(array of objects).
 
@@ -65,7 +65,7 @@ npm install csv-kit
              });
 
 
-        //or if you want to invoke the dbWrite() inside the promise, pass in the data retrieved from the promise directly as        //an argument
+or if you want to invoke the dbWrite() inside the promise, pass in the data retrieved from the promise directly as an argument
 
         db.Csv
           .find({})
