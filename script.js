@@ -4,8 +4,8 @@
     var multer = require('multer');
     var upload = multer({ dest: "uploads/" });
 
-    function kit(filename) {
-        return new kit.init(filename);
+    function kit() {
+        return new kit.init();
     }
 
     kit.prototype = {
@@ -13,7 +13,8 @@
         log: function() {
             console.log('file to be parsed: ', this.filename);
         },
-        upload: function() {
+        upload: function(filename) {
+            this.filename = filename;
             return upload.single(this.filename);
         },
         read: function(path) {
@@ -52,9 +53,8 @@
         }
     };
 
-    kit.init = function(filename) {
+    kit.init = function() {
         var self = this;
-        self.filename = filename;
     }
 
     kit.init.prototype = kit.prototype;
