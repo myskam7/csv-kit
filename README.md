@@ -20,7 +20,7 @@ Uploading A Single File
 
         $k.upload(/*input name*/)
         
-        //.upload() calls the multer npm package, which attaches a body object and a file/files object to the request                //object. To access the data use "req.file" for now, since only single uploads are currently available.
+.upload() calls the multer npm package, which attaches a body object and a file/files object to the request object. To access the data use "req.file" for now, since only single uploads are currently available.
 
 Then use as a middleware function in your routes:
 
