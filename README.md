@@ -57,11 +57,10 @@ query(array of objects).
         var path = '../csvs/records/top1000.csv';
         var headers = ['artist','year','song'];
         var dbArray = [];
-```
+
         Example: 
         //Mongoose database query
         
-```javascript
                    db.Csv
                       .find({})
                       .then(data => {
