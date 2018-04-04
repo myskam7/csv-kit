@@ -14,8 +14,9 @@ Multi-purposed module that can act as middleware for uploading csv files, and/or
 ```
 ## Uploading A Single File
 
-        take the name of the input element with type file and pass it as an argument:
   ```javascript
+        take the name of the input element with type file and pass it as an argument:
+
         $k.upload(//put_input_name_here//)
   ```
         
