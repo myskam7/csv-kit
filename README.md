@@ -47,7 +47,8 @@ $k.read(file) reads the file based off the sent file path-- can attach event han
 
 Writing Csv data to specified path from a MongoDB database
 
-        This method only needs a path, headers(as an array of strings/values), and the data from a database retrieval                 query(array of objects).
+This method only needs a path, headers(as an array of strings/values), and the data from a database retrieval 
+query(array of objects).
 
         var path = '../csvs/records/top1000.csv';
         var headers = ['artist','year','song'];
