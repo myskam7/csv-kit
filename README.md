@@ -1,5 +1,5 @@
 # csv-kit
-Multi-purposed module that can act as middleware for uploading csv files, and/or read a csv data set from a database and write it to a specified path. In the future, I will be adding more features-- standardizing the data formarts for particular databases, namely MySQL and MongoDB.
+Multi-purposed module that can act as middleware for uploading csv files, and/or read a csv data set from a database and write it to a specified path. In the future, I will be adding more features-- standardizing the data formats for particular databases, namely MySQL and MongoDB.
 
         Installation
 
@@ -20,7 +20,7 @@ Uploading A Single File
 
         $k.upload(/*input name*/)
         
-        //.upload() calls the multer npm package, which attaches a body object and a file/files object to the request                //object, //so //to access the data use "req.file" for now, since only single uploads are currently available.
+.upload() calls the multer npm package, which attaches a body object and a file/files object to the request object. To access the data use "req.file" for now, since only single uploads are currently available.
 
 Then use as a middleware function in your routes:
 
@@ -47,19 +47,22 @@ $k.read(file) reads the file based off the sent file path-- can attach event han
 
 Writing Csv data to specified path from a MongoDB database
 
-        This method only needs path, headers(as an array of strings/values), and the data from a database retrieval                   query(array of objects).
+This method only needs a path, headers(as an array of strings/values), and the data from a database retrieval
+query(array of objects).
 
         var path = '../csvs/records/top1000.csv';
         var headers = ['artist','year','song'];
         var dbArray = [];
         
-        //example: db.Csv
+        Example: 
+        //Mongoose database query            
+                   db.Csv
                       .find({})
                       .then(data => {
                         dbArray = data;
                       })
 
-        $k.dbWrite(path, headers, dbArray)
+         $k.dbWrite(path, headers, dbArray)
             .on('finish', function(){
                 console.log('done');
              });
