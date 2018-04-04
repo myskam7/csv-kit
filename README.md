@@ -2,12 +2,12 @@
 Multi-purposed module that can act as middleware for uploading csv files, and/or read a csv data set from a database and write it to a specified path. In the future, I will be adding more features-- standardizing the data formats for particular databases, namely MySQL and MongoDB.
 
 ## Installation
-
+        ```javascript
         npm install csv-kit
 
 
 ## Usage
-
+        ```javascript
         var kit = require('csv-kit');
 
         var $k = kit(); //set the object to use its methods
@@ -17,13 +17,13 @@ Multi-purposed module that can act as middleware for uploading csv files, and/or
 ## Uploading A Single File
 
         take the name of the input element with type file and pass it as an argument:
-
+        ```javascript
         $k.upload(//put_input_name_here//)
         
 .upload() calls the multer npm package, which attaches a body object and a file/files object to the request object. To access the data use "req.file" for now, since only single uploads are currently available.
 
 Then use as a middleware function in your routes:
-
+        ```javascript
         app.post('/api/csv', $k.upload('csv'), function(req, res) {
           var file = req.file.path;
            //Do whatever with file
@@ -33,7 +33,8 @@ Then use as a middleware function in your routes:
         
 The path retreived from $k.upload() will be sent in as an argument to the read method.
 $k.read(file) reads the file based off the sent file path-- can attach event handlers:
-
+        
+        ```javascript
         $k.read(file)
           .on('data', function(data){
             //do something 
@@ -49,13 +50,16 @@ $k.read(file) reads the file based off the sent file path-- can attach event han
 
 This method only needs a path, headers(as an array of strings/values), and the data from a database retrieval
 query(array of objects).
-
+        
+        ```javascript
         var path = '../csvs/records/top1000.csv';
         var headers = ['artist','year','song'];
         var dbArray = [];
         
         Example: 
-        //Mongoose database query            
+        //Mongoose database query
+        
+                ```javascript
                    db.Csv
                       .find({})
                       .then(data => {
@@ -70,6 +74,7 @@ query(array of objects).
 
 **_OR_** if you want to invoke the dbWrite() inside the promise, pass in the data retrieved from the promise directly as an argument
 
+        ```javascript
         db.Csv
           .find({})
           .then(data => {
