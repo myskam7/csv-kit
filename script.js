@@ -30,11 +30,11 @@
             var obj = {};
             var arr = [];
 
-            for(var i=0; i<dbArr.length; i++){     
+            for(var i=0, l=dbArr.length; i<l; i++){     
 
                 obj = {};
 
-                for(var j=0; j<headers.length; j++){
+                for(var j=0, len=headers.length; j<len; j++){
                     obj[headers[j]] = dbArr[i][headers[j]];
                 }
 
