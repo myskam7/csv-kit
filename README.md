@@ -43,7 +43,7 @@ $k.read(file) reads the file based off the sent file path-- can attach event han
             //do something 
             console.log(data);
           })
-         .on("end", function(){
+         .on("end", function(data){
              //do something
              console.log("done");
          });
